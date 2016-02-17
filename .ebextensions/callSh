@@ -1,0 +1,15 @@
+packages:
+  yum:
+    mlocate: []
+
+container_commands:
+  01-command:
+    command: updatedb
+  02-command:
+    command: rm -rf /captiv8/.ebextensions
+  03-command:
+    command: mkdir -p /captiv8/.ebextensions
+  04-command:
+    command: cp -R .ebextensions/* /captiv8/.ebextensions/
+  05-command:
+    command: bash /captiv8/.ebextensions/scripts/ioncube.sh
